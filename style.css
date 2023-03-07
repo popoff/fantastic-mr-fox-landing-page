@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
+/* HEADER */
 .header-container {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 10px 0 40px;
   background-color: #0D3B66;
 }
 
@@ -15,7 +16,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 900px;
+  width: 70vw;
 }
 
 .logo {
@@ -26,7 +27,7 @@ header {
 
 .logo img {
   max-width: 100%;
-  width: 200px;
+  width: 250px;
 }
 
 .header-links img {
@@ -47,16 +48,63 @@ header {
   display: flex;
   list-style-type: none;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
 }
 
-.header-links li {
+.header-links li:nth-child(2), .header-links li:nth-child(4) {
   padding-right: 15px;
 }
 
 .header-links li a {
   color: #F7CE46;
   text-decoration: none;
+  font-size: 18px;
 }
 
+/* HERO */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 85px;
+  background-color: #0D3B66;
+}
 
+.hero {
+  display: flex;
+  width: 70vw;
+  gap: 40px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  justify-content: space-between;
+  color: #F7CE46;
+  gap: 10px;
+}
+
+.hero-header-text {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.hero-paragraph-text {
+  font-size: 18px;;
+}
+
+button.hero-button {
+  width: 100px;
+  height: 35px;
+  border-radius: 9px;
+  background-color: #F7CE46;
+  color: #0D3B66;
+  border-color: #F7CE46 ;
+}
+
+.hero-image img {
+  max-width: 100%;
+  width: 35vw;
+  flex-basis: 50%;
+}
