@@ -85,9 +85,9 @@ header {
   gap: 10px;
 }
 
-.hero-header-text {
+.hero-header {
   font-size: 28px;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .hero-paragraph-text {
@@ -107,4 +107,42 @@ button.hero-button {
   max-width: 100%;
   width: 35vw;
   flex-basis: 50%;
+}
+
+/* CARDS */
+.cards-header h1  {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  padding: 25px 25px;
+  color: #0D3B66;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 185px;
+  padding: 0 10px 20px;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.card-text {
+  color: #0D3B66;
+  font-size: 15px;
 }
