@@ -1,4 +1,4 @@
-# Landing Page
+# Fantasctic Mr. Fox Landing Page
 
 ## Summary
 
@@ -9,7 +9,7 @@ This is a landing page built with flexbox from a design provided. Done as part o
 
 ## What I used
 - [Responsive navbar without JavaScript by Shubham Tiwari](https://dev.to/shubhamtiwari909/responsive-navbar-without-javascript-3p7o) for responsive navbar.
-- [CSS Gradient Generator] (https://www.joshwcomeau.com/gradient-generator/) by Josh Comeau.
+- [CSS Gradient Generator](https://www.joshwcomeau.com/gradient-generator/) by Josh Comeau.
 - Images from [Fantastic Mr.Fox Wiki](https://fantasticmrfox.fandom.com/wiki/Fantastic_Mr._Fox_Wiki).
 - No JavaScript except FontAwesome icons library.
 
@@ -20,4 +20,5 @@ This is a landing page built with flexbox from a design provided. Done as part o
 - CSS Fundations
 - Flexbox Fundations
 - Responsive Web Design Fundations
+- How smart Fantastic Mr. Fox is
 
