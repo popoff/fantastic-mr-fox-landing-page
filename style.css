@@ -5,10 +5,11 @@
 }
 
 html {
-  font-size: 16px
+  font-size: 16px;
 }
 
-body, button {
+body,
+button {
   font-family: Roboto;
 }
 
@@ -16,8 +17,8 @@ body, button {
 .header-container {
   display: flex;
   justify-content: center;
-  padding: 10px 0 40px;
-  background-color: #253031;
+  padding: 30px 0;
+  background-color: #693612;
 }
 
 header {
@@ -44,12 +45,6 @@ nav img {
   border-radius: 50%;
 }
 
-
-/* .logo-text {
-  color: #C72027;
-  font-size: 24px;
-} */
-
 nav {
   display: flex;
   justify-content: center;
@@ -63,40 +58,63 @@ nav ul {
 
 nav ul a {
   display: flex;
-  /* flex-direction: row-reverse; */
-  /* Reverse the order of the icon and text */
   align-items: center;
   text-decoration: none;
-  color: #F7CE46;
+  color: #f7ce46;
 }
 
 nav ul img {
   margin-left: 5px;
-  /* Move the image to the left side */
   margin-right: 5px;
 }
 
 nav ul a:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
+  filter: brightness(120%);
 }
 
-/* nav li:nth-child(2), nav li:nth-child(4) {
-  padding-right: 15px;
-} */
+/* HOVER UNDERLINE ANIMATIOM */
+nav ul li span {
+  display: inline-block;
+  position: relative;
+}
 
-/* nav li a {
-  color: #F7CE46;
-  text-decoration: none;
-  font-size: 1.1rem;
-} */
+nav ul li span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f7ce46;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav ul li span:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 /* HERO */
 .hero-container {
   display: flex;
   justify-content: center;
   padding: 20px 0 85px;
-  background-color: #253031;
+  background-image: linear-gradient(
+    180deg,
+    hsl(25deg 71% 24%) 0%,
+    hsl(27deg 72% 28%) 15%,
+    hsl(29deg 73% 32%) 34%,
+    hsl(31deg 75% 36%) 54%,
+    hsl(33deg 78% 40%) 70%,
+    hsl(35deg 81% 43%) 82%,
+    hsl(35deg 62% 53%) 89%,
+    hsl(35deg 63% 62%) 94%,
+    hsl(35deg 65% 71%) 98%,
+    hsl(35deg 68% 79%) 99%,
+    hsl(36deg 74% 88%) 100%
+  );
 }
 
 .hero {
@@ -113,10 +131,8 @@ nav ul a:hover {
 .hero-text {
   display: flex;
   flex-direction: column;
-  /* flex-basis: 50%; */
   flex: 1;
-  /* justify-content: space-between; */
-  color: #F7CE46;
+  color: #f7ce46;
   gap: 10px;
 }
 
@@ -125,12 +141,64 @@ nav ul a:hover {
 }
 
 button.hero-button {
-  width: 100px;
-  height: 35px;
+  width: 120px;
+  height: 40px;
   border-radius: 9px;
-  background-color: #F7CE46;
-  color: #222E50;
-  border-color: #F7CE46 ;
+  background-color: #f7ce46;
+  color: #af551d;
+  border-color: #f7ce46;
+}
+
+/* HERO BUTTON HOVER ANIMATION  */
+.hero-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-button:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 172, 142, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(229, 172, 142, 0)
+  );
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+
+/*This activates animation  once the button has been hovered*/
+.hero-button:hover::after,
+button:focus::after {
+  animation: hero-button 1s forwards;
+}
+
+@keyframes hero-button {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+
+.hero-button:active {
+  box-shadow: 0px 0px 0px white;
+  -webkit-box-shadow: inset -2px 2px 2px #ccc;
+  -moz-box-shadow: inset -2px 2px 2px #ccc;
+  box-shadow: inset -2px 2px 2px #ccc;
+  transform: translate(0, 2px);
+  color: #ffc491;
+  background-color: #ede358;
+}
+
+.hero-button:focus {
+  outline: 0;
+}
+
+button.hero-button:hover {
+  filter: brightness(110%);
 }
 
 .hero-image {
@@ -149,14 +217,15 @@ button.hero-button {
 
 .cards-header {
   padding: 20px 0;
+  background-color: #f7e5ca;
 }
 
-.cards-header h1  {
+.cards-header h1 {
   font-size: 2.25rem;
   font-weight: 800;
   text-align: center;
   padding: 25px 25px;
-  color: #253031;
+  color: #af551d;
 }
 
 .cards-container {
@@ -165,16 +234,14 @@ button.hero-button {
   width: 100%;
   justify-content: center;
   padding-bottom: 60px;
+  background-color: #f7e5ca;
 }
 
 .cards-wrapper {
   display: flex;
-  /* justify-content: space-between; */
   justify-content: center;
-  /* width: 65%; */
   text-align: center;
   flex-wrap: wrap;
-  /* gap: 10px; */
 }
 
 .card {
@@ -187,18 +254,31 @@ button.hero-button {
   border-radius: 7%;
   border-width: 3px;
   border-style: solid;
-  border-color: #F7CE46 ;
+  border-color: #f7ce46;
 }
 
 .card-text {
-  color: #222E50;
+  color: #af551d;
   font-size: 0.9rem;
 }
 
 /* QUOTE */
 .quote-container {
   width: 100%;
-  background-color:#C5D2D3 ;
+  background-image: linear-gradient(
+    0deg,
+    hsl(25deg 71% 24%) 0%,
+    hsl(27deg 72% 28%) 15%,
+    hsl(29deg 73% 32%) 34%,
+    hsl(31deg 75% 36%) 54%,
+    hsl(33deg 78% 40%) 70%,
+    hsl(35deg 81% 43%) 82%,
+    hsl(35deg 62% 53%) 89%,
+    hsl(35deg 63% 62%) 94%,
+    hsl(35deg 65% 71%) 98%,
+    hsl(35deg 68% 79%) 99%,
+    hsl(36deg 74% 88%) 100%
+  );
   padding: 80px 0;
 }
 
@@ -213,12 +293,14 @@ button.hero-button {
   font-style: italic;
   font-weight: 300;
   line-height: 1.5;
+  color: #f7ce46;
 }
 
 .quote-author-text {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.5;
+  color: #f7ce46;
 }
 
 /* BANNER */
@@ -226,12 +308,26 @@ button.hero-button {
   display: flex;
   justify-content: center;
   padding: 85px 0 85px;
+  background-color: #f7e5ca;
 }
 
 .banner-wraper {
   width: 70%;
   display: flex;
-  background-color: #F7CE46;
+  background-image: linear-gradient(
+    90deg,
+    hsl(25deg 71% 24%) 0%,
+    hsl(27deg 72% 28%) 18%,
+    hsl(29deg 73% 32%) 38%,
+    hsl(31deg 75% 36%) 60%,
+    hsl(33deg 78% 40%) 81%,
+    hsl(35deg 81% 43%) 96%,
+    hsl(35deg 62% 53%) 100%,
+    hsl(35deg 63% 62%) 101%,
+    hsl(35deg 65% 71%) 101%,
+    hsl(35deg 68% 79%) 100%,
+    hsl(36deg 74% 88%) 100%
+  );
   padding: 40px 80px;
   border-radius: 9px;
 }
@@ -244,12 +340,12 @@ button.hero-button {
 
 .banner-header {
   font-size: 1.5rem;
-  color: #222E50;
+  color: #f7ce46;
 }
 
 .banner-paragraph {
   font-size: 1.25rem;
-  color: #222E50;
+  color: #f7ce46;
 }
 
 .button-wrapper {
@@ -260,14 +356,65 @@ button.hero-button {
 
 .banner-button {
   flex: 1;
-  width: 100px;
-  height: 35px;
+  width: 120px;
+  height: 40px;
   border-radius: 9px;
-  background-color: #F7CE46;
-  color: #253031;
-  border-color: #253031;
+  background-color: #f7ce46;
+  color: #af551d;
+  border-color: #f7ce46;
 }
 
+/* BANNER BUTTON HOVER ANIMATION  */
+.banner-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-button:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 172, 142, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(229, 172, 142, 0)
+  );
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+
+/*This activates animation  once the button has been hovered*/
+.banner-button:hover::after,
+button:focus::after {
+  animation: banner-button 1s forwards;
+}
+
+@keyframes banner-button {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+
+.banner-button:active {
+  box-shadow: 0px 0px 0px white;
+  -webkit-box-shadow: inset -2px 2px 2px #ccc;
+  -moz-box-shadow: inset -2px 2px 2px #ccc;
+  box-shadow: inset -2px 2px 2px #ccc;
+  transform: translate(0, 2px);
+  color: #ffc491;
+  background-color: #ede358;
+}
+
+.banner-button:focus {
+  outline: 0;
+}
+
+button.banner-button:hover {
+  filter: brightness(110%);
+}
 
 /* NAVIGATION STYLES */
 .hamburger-icon {
@@ -281,7 +428,7 @@ button.hero-button {
 
 .hamburger-icon .fa-bars,
 .hamburger-icon .fa-x {
-  color: #F7CE46;
+  color: #f7ce46;
   font-size: 1.85rem;
   cursor: pointer;
 }
@@ -291,37 +438,32 @@ button.hero-button {
 }
 
 /* RESPONSIVENESS */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 990px) {
   header {
     display: block;
   }
 
-nav ul a {
-  position: relative;
-  z-index: 1;
-  /* Add the following two properties */
-  transform-origin: top left;
-  /* Adjust the padding as needed */
-}
+  nav ul a {
+    position: relative;
+    z-index: 1;
+    transform-origin: top left;
+  }
 
-nav ul a:hover {
-  transform: scale(1.2);
-  transition: transform 0.2s ease-in-out;
-  /* Add a higher z-index value to keep the hovered element on top */
-  z-index: 2;
-}
+  nav ul a:hover {
+    filter: brightness(120%);
+  }
 
   nav ul {
     height: 0;
     overflow: hidden;
     flex-direction: column;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
-nav li:nth-child(2),
-nav li:nth-child(4) {
-  padding-right: 0px;
-}
+  nav li:nth-child(2),
+  nav li:nth-child(4) {
+    padding-right: 0px;
+  }
 
   .logo {
     display: flex;
@@ -339,7 +481,7 @@ nav li:nth-child(4) {
   header:has(.hamburger-icon input[type="checkbox"]:checked) nav ul {
     margin-top: 1rem;
     height: 210px;
-    width: 200px;
+    width: auto;
   }
 
   header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-bars {
@@ -366,9 +508,9 @@ nav li:nth-child(4) {
   }
 
   .hero-paragraph-text {
-      font-size: 1rem;
-      line-height: 1.2;
-    }
+    font-size: 1rem;
+    line-height: 1.2;
+  }
 
   .hero-button {
     margin-top: 16px;
@@ -397,12 +539,11 @@ nav li:nth-child(4) {
     margin-top: 10px;
   }
 
-  .banner-header  {
-  font-size: 1.3rem;
+  .banner-header {
+    font-size: 1.3rem;
   }
 
   .banner-paragraph {
     font-size: 1.1rem;
   }
 }
-/* END OF NAVIGATION STYLES */
